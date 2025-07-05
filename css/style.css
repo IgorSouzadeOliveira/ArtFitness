@@ -1,0 +1,207 @@
+/* Paleta de Cores ArtFitness */
+:root {
+    --black-custom: #1a1a1a; /* Preto mais suave para fundos */
+    --orange-custom: #ff6f00; /* Laranja vibrante */
+    --dark-gray-card: #2c2c2c; /* Cinza escuro para cards */
+    --light-text: #f0f0f0; /* Texto claro (para uso em fundos escuros) */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--black-custom); /* Fundo geral do body ainda escuro */
+    color: var(--light-text); /* Texto geral do body ainda claro */
+    overflow-x: hidden; /* Evita scroll horizontal indesejado */
+}
+
+/* Navbar Customizada - AGORA COM FUNDO BRANCO */
+.bg-dark-custom {
+    background-color: #ffffff !important; /* Fundo branco para o header */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra suave para destacar */
+}
+
+/* Estilo para a imagem da logo */
+.logo-artfitness img {
+    height: 55px; /* Altura da logo - AJUSTADO */
+    /* width: auto; para manter a proporção */
+}
+
+/* Links da Navbar - AGORA PRETOS para contraste com fundo branco */
+.navbar-nav .nav-link {
+    color: var(--black-custom) !important; /* Links pretos */
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--orange-custom) !important; /* Laranja no hover */
+}
+
+/* Ícone do Navbar Toggler (hambúrguer) - Ajuste para fundo claro */
+.navbar-toggler-icon {
+    /* Define o ícone de hambúrguer com cor preta para ser visível no fundo branco */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* Dropdown Menu Personalizado - Mantido escuro como o body, com texto claro */
+/* Se quiser o dropdown CLARO também, você precisaria mudar a classe no HTML para 'dropdown-menu-light-custom'
+   e usar as regras do '.dropdown-menu-light-custom' (abaixo, comentado) */
+.dropdown-menu-dark-custom {
+    background-color: var(--black-custom); /* Fundo escuro */
+    border-color: var(--orange-custom);
+}
+
+.dropdown-menu-dark-custom .dropdown-item {
+    color: var(--light-text); /* Texto claro */
+}
+
+.dropdown-menu-dark-custom .dropdown-item:hover {
+    background-color: var(--orange-custom);
+    color: var(--black-custom); /* Texto escuro no hover */
+}
+
+
+/* Botões Personalizados */
+.btn-primary-custom {
+    background-color: var(--orange-custom);
+    border-color: var(--orange-custom);
+    color: var(--black-custom); /* Cor do texto do botão */
+    font-weight: bold;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary-custom:hover {
+    background-color: #e06000; /* Laranja um pouco mais escuro no hover */
+    border-color: #e06000;
+    color: var(--black-custom);
+}
+
+.btn-primary-custom-outline {
+    background-color: transparent;
+    border: 2px solid var(--orange-custom);
+    color: var(--orange-custom);
+    font-weight: bold;
+    padding: 0.8rem 2.5rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary-custom-outline:hover {
+    background-color: var(--orange-custom);
+    color: var(--black-custom);
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh; /* Ocupa a altura total da tela */
+    /* Lembre-se de mudar esta URL para sua imagem de fundo real! */
+    background: url('https://via.placeholder.com/1920x1080/000000/FFFFFF?text=Equipamentos+Fitness+ArtFitness') no-repeat center center/cover;
+    position: relative;
+    z-index: 1; /* Garante que o texto fique por cima */
+    padding-top: 56px; /* Ajusta para a altura da navbar fixa */
+}
+
+/* Overlay para escurecer a imagem de fundo e melhorar a leitura do texto */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Overlay preto semi-transparente */
+    z-index: -1;
+}
+
+.hero-title {
+    color: var(--orange-custom);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-size: 3.5rem; /* Tamanho do título para desktop */
+}
+
+/* Título das seções */
+.section-title {
+    color: var(--orange-custom);
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+/* Cards de Destaques */
+.bg-dark-card {
+    background-color: var(--dark-gray-card) !important;
+    border: 1px solid var(--orange-custom);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.bg-dark-card .card-title {
+    color: var(--orange-custom);
+    font-weight: bold;
+}
+
+.icon-large {
+    font-size: 4rem;
+    color: var(--orange-custom);
+}
+
+.text-orange {
+    color: var(--orange-custom) !important;
+}
+
+/* Rodapé - AGORA BRANCO */
+footer {
+    background-color: #ffffff !important; /* Fundo branco para o rodapé */
+    color: var(--black-custom); /* Mudar a cor do texto do rodapé para preto */
+    border-top: 2px solid var(--orange-custom); /* Manter a borda laranja */
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.1); /* Sombra suave para destacar */
+}
+
+/* Ícones sociais no rodapé agora pretos para contraste com fundo branco */
+footer .social-icons a {
+    color: var(--black-custom) !important; /* Ícones sociais pretos */
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+footer .social-icons a:hover {
+    color: var(--orange-custom) !important; /* Laranja no hover */
+}
+
+
+/* Media Queries para Responsividade (ajustes para telas menores) */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem; /* Ajusta o tamanho do título em telas menores */
+    }
+    .btn-primary-custom-outline {
+        padding: 0.6rem 2rem;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+    .navbar-collapse {
+        background-color: #ffffff; /* Fundo para o menu hamburger em telas pequenas */
+        padding: 1rem;
+        margin-top: 0.5rem;
+        border-radius: 5px;
+        border: 1px solid #eee; /* Borda leve para o menu aberto */
+    }
+    /* Assegura que os links sejam pretos no menu mobile aberto */
+    .navbar-nav .nav-link {
+        color: var(--black-custom) !important;
+    }
+    /* Dropdown menu no mobile - se você quiser ele CLARO */
+    /*
+    .dropdown-menu-dark-custom {
+        background-color: #ffffff;
+        border-color: #eee;
+    }
+    .dropdown-menu-dark-custom .dropdown-item {
+        color: var(--black-custom);
+    }
+    .dropdown-menu-dark-custom .dropdown-item:hover {
+        background-color: var(--orange-custom);
+        color: #ffffff;
+    }
+    */
+}
