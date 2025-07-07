@@ -1,11 +1,16 @@
 /* Paleta de Cores ArtFitness */
 :root {
-    --black-custom: #1a1a1a; /* Preto mais suave para fundos */
+    --black-custom: #1a1a1a; /* Preto mais suave para fundos (principalmente body) */
     --orange-custom: #ff6f00; /* Laranja vibrante */
-    --dark-gray-card: #2c2c2c; /* Cinza escuro para cards */
+    --dark-gray-card: #2c2c2c; /* Cinza escuro para cards de diferencial */
     --light-text: #f0f0f0; /* Texto claro (para uso em fundos escuros) */
     --footer-text-color: #555; /* Cor para textos comuns do footer (um cinza escuro) */
     --footer-heading-color: #333; /* Cor para títulos do footer */
+    --black-custom-light: #333; /* Um preto um pouco mais claro para textos em cards claros (categorias) */
+    --gray-text-card: #666; /* Cinza para textos em cards claros (categorias) */
+    --white-transparent-bg: rgba(255, 255, 255, 0.1); /* Branco semi-transparente para CTAs */
+    --dark-bg-section: #1a1a1a; /* Cor para fundos de seção escuros (como a de parceiros) */
+    --light-text-color: #f0f0f0; /* Cor para texto em fundos escuros (como a de parceiros) */
 }
 
 body {
@@ -145,262 +150,125 @@ body {
     color: var(--orange-custom) !important;
 }
 
-/* NOVO RODAPÉ - ESTILOS */
-.footer-custom {
-    background-color: #ffffff !important; /* Fundo branco para o rodapé */
-    color: var(--footer-text-color); /* Cor padrão para textos no footer */
-    padding-top: 3rem; /* Mais espaçamento no topo */
-    padding-bottom: 2rem; /* Espaçamento na base */
-    border-top: 2px solid var(--orange-custom); /* Manter a borda laranja */
-    box-shadow: 0 -2px 4px rgba(0,0,0,0.05); /* Sombra suave para destacar */
+/* NOVO ESTILO PARA CARDS DE CATEGORIA DE PRODUTOS */
+.product-category-card {
+    border: 1px solid #ddd; /* Borda clara */
+    border-radius: 8px;
+    overflow: hidden; /* Garante que a imagem se ajuste bem */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #ffffff; /* Fundo branco para o card */
 }
 
-.footer-custom .container {
-    padding-left: 15px; /* Ajuste padding para colunas */
-    padding-right: 15px;
+.product-category-card:hover {
+    transform: translateY(-5px); /* Efeito de "levantar" no hover */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1); /* Sombra mais intensa no hover */
 }
 
-.footer-logo img {
-    max-height: 65px; /* Logo maior no footer */
-    filter: brightness(0.2); /* Deixa a logo mais escura para o fundo claro, se já não for preta */
-    /* Se sua logo já for preta, pode remover o 'filter' */
+.product-category-card .card-img-top {
+    height: 200px; /* Altura fixa para as imagens da categoria */
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
 }
 
-.text-dark-custom-footer {
-    color: var(--footer-text-color) !important;
-    line-height: 1.8; /* Melhorar espaçamento entre linhas */
+.product-category-card .card-body {
+    padding: 1.5rem;
+    color: var(--gray-text-card); /* Cor geral do texto no card */
 }
 
-.text-dark-custom-footer a {
-    color: var(--footer-text-color) !important;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.text-dark-custom-footer a:hover {
-    color: var(--orange-custom) !important;
-}
-
-.text-orange-footer {
-    color: var(--orange-custom) !important;
+.product-category-card .card-title {
+    color: var(--black-custom-light); /* Cor do título do card */
     font-weight: bold;
-    text-transform: uppercase;
-    font-size: 1.1rem;
-}
-
-.footer-links li {
-    margin-bottom: 8px; /* Espaçamento entre os itens da lista */
-}
-
-.footer-links a {
-    color: var(--footer-text-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-    color: var(--orange-custom);
-}
-
-.icon-social-footer {
-    font-size: 1.8rem; /* Tamanho dos ícones sociais */
-    color: var(--footer-text-color); /* Cor dos ícones sociais */
-    transition: color 0.3s ease;
-}
-
-.icon-social-footer:hover {
-    color: var(--orange-custom); /* Laranja no hover */
-}
-
-.footer-divider {
-    border-color: #eee; /* Cor da linha divisória */
-    margin-top: 1rem;
     margin-bottom: 1rem;
 }
 
-
-/* Media Queries para Responsividade (ajustes para telas menores) */
-@media (max-width: 768px) {
-    .hero-title {
-        font-size: 2.5rem; /* Ajusta o tamanho do título em telas menores */
-    }
-    .btn-primary-custom-outline {
-        padding: 0.6rem 2rem;
-    }
-    .section-title {
-        font-size: 2rem;
-    }
-    .navbar-collapse {
-        background-color: #ffffff; /* Fundo para o menu hamburger em telas pequenas */
-        padding: 1rem;
-        margin-top: 0.5rem;
-        border-radius: 5px;
-        border: 1px solid #eee; /* Borda leve para o menu aberto */
-    }
-    /* Assegura que os links sejam pretos no menu mobile aberto */
-    .navbar-nav .nav-link {
-        color: var(--black-custom) !important;
-    }
-
-    /* Ajustes de responsividade para o footer */
-    .footer-custom .col-md-3 {
-        text-align: center !important; /* Centraliza as colunas em telas menores */
-    }
-    .footer-logo {
-        text-align: center;
-    }
-    .footer-logo img {
-        margin: 0 auto; /* Centraliza a logo */
-    }
-    .social-icons-footer {
-        justify-content: center; /* Centraliza os ícones sociais */
-        display: flex;
-    }
-}/* Paleta de Cores ArtFitness */
-:root {
-    --black-custom: #1a1a1a; /* Preto mais suave para fundos */
-    --orange-custom: #ff6f00; /* Laranja vibrante */
-    --dark-gray-card: #2c2c2c; /* Cinza escuro para cards */
-    --light-text: #f0f0f0; /* Texto claro (para uso em fundos escuros) */
-    --footer-text-color: #555; /* Cor para textos comuns do footer (um cinza escuro) */
-    --footer-heading-color: #333; /* Cor para títulos do footer */
+.text-black-custom-card {
+    color: var(--black-custom-light) !important;
 }
 
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: var(--black-custom); /* Fundo geral do body ainda escuro */
-    color: var(--light-text); /* Texto geral do body ainda claro */
-    overflow-x: hidden; /* Evita scroll horizontal indesejado */
+.text-gray-card {
+    color: var(--gray-text-card) !important;
 }
 
-/* Navbar Customizada */
-.bg-dark-custom {
-    background-color: #ffffff !important; /* Fundo branco para o header */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra suave para destacar */
-}
-
-/* Estilo para a imagem da logo */
-.logo-artfitness img {
-    height: 55px; /* Altura da logo */
-}
-
-/* Links da Navbar */
-.navbar-nav .nav-link {
-    color: var(--black-custom) !important; /* Links pretos */
-    transition: color 0.3s ease;
-}
-
-.navbar-nav .nav-link:hover {
-    color: var(--orange-custom) !important; /* Laranja no hover */
-}
-
-/* Ícone do Navbar Toggler (hambúrguer) */
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-}
-
-/* Dropdown Menu Personalizado */
-.dropdown-menu-dark-custom {
-    background-color: var(--black-custom); /* Fundo escuro */
-    border-color: var(--orange-custom);
-}
-
-.dropdown-menu-dark-custom .dropdown-item {
-    color: var(--light-text); /* Texto claro */
-}
-
-.dropdown-menu-dark-custom .dropdown-item:hover {
-    background-color: var(--orange-custom);
-    color: var(--black-custom); /* Texto escuro no hover */
-}
-
-/* Botões Personalizados */
-.btn-primary-custom {
+.btn-primary-custom-category {
     background-color: var(--orange-custom);
     border-color: var(--orange-custom);
-    color: var(--black-custom); /* Cor do texto do botão */
+    color: #ffffff !important; /* Texto branco para o botão da categoria */
     font-weight: bold;
-    padding: 0.5rem 1.5rem;
+    padding: 0.6rem 1.2rem;
     border-radius: 5px;
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-.btn-primary-custom:hover {
+.btn-primary-custom-category:hover {
     background-color: #e06000; /* Laranja um pouco mais escuro no hover */
     border-color: #e06000;
-    color: var(--black-custom);
+    color: #ffffff !important;
 }
 
-.btn-primary-custom-outline {
+/* NOVA SEÇÃO CTA FINAL */
+.cta-section {
+    background-color: var(--orange-custom); /* Fundo laranja para a CTA */
+    color: #ffffff;
+    padding: 4rem 0; /* Mais espaçamento interno */
+    margin-top: 3rem; /* Espaçamento do elemento acima */
+}
+
+.cta-section .lead {
+    max-width: 700px; /* Limita a largura do parágrafo */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-primary-custom-outline-white {
     background-color: transparent;
-    border: 2px solid var(--orange-custom);
-    color: var(--orange-custom);
+    border: 2px solid #ffffff; /* Borda branca */
+    color: #ffffff;
     font-weight: bold;
     padding: 0.8rem 2.5rem;
     border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-.btn-primary-custom-outline:hover {
-    background-color: var(--orange-custom);
-    color: var(--black-custom);
+.btn-primary-custom-outline-white:hover {
+    background-color: #ffffff;
+    color: var(--orange-custom); /* Texto laranja no hover */
+    border-color: #ffffff;
 }
 
-/* Hero Section */
-.hero-section {
-    height: 100vh; /* Ocupa a altura total da tela */
-    /* Lembre-se de mudar esta URL para sua imagem de fundo real! */
-    background: url('https://via.placeholder.com/1920x1080/000000/FFFFFF?text=Equipamentos+Fitness+ArtFitness') no-repeat center center/cover;
-    position: relative;
-    z-index: 1; /* Garante que o texto fique por cima */
-    padding-top: 56px; /* Ajusta para a altura da navbar fixa */
+/* NOVA SEÇÃO: MARCAS PARCEIRAS */
+.partners-section {
+    background-color: var(--dark-bg-section); /* Fundo escuro para a seção de parceiros */
+    color: var(--light-text-color); /* Texto claro para contraste */
+    padding: 4rem 0; /* Espaçamento interno */
 }
 
-/* Overlay para escurecer a imagem de fundo e melhorar a leitura do texto */
-.hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.6); /* Overlay preto semi-transparente */
-    z-index: -1;
-}
-
-.hero-title {
-    color: var(--orange-custom);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    font-size: 3.5rem; /* Tamanho do título para desktop */
-}
-
-/* Título das seções */
-.section-title {
-    color: var(--orange-custom);
+.section-title-light {
+    color: var(--orange-custom); /* Título laranja para contraste no fundo escuro */
     font-weight: bold;
     font-size: 2.5rem;
 }
 
-/* Cards de Destaques */
-.bg-dark-card {
-    background-color: var(--dark-gray-card) !important;
-    border: 1px solid var(--orange-custom);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+.partner-logo-link {
+    display: block; /* Para garantir que o link ocupe todo o espaço do logo */
+    text-decoration: none; /* Remove sublinhado padrão */
+    transition: transform 0.3s ease; /* Transição para efeito de hover */
+    margin: 0 auto; /* Centraliza o link se a coluna for maior que o conteúdo */
 }
 
-.bg-dark-card .card-title {
-    color: var(--orange-custom);
-    font-weight: bold;
+.partner-logo {
+    max-width: 150px; /* Largura máxima para os logos */
+    height: auto;
+    filter: grayscale(100%); /* Deixa o logo em preto e branco */
+    opacity: 0.7; /* Suaviza a cor do logo */
+    transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+    display: block; /* Garante que a imagem seja um bloco para margin auto funcionar */
+    margin: 0 auto; /* Centraliza a imagem dentro do link/coluna */
 }
 
-.icon-large {
-    font-size: 4rem;
-    color: var(--orange-custom);
-}
-
-.text-orange {
-    color: var(--orange-custom) !important;
+.partner-logo:hover {
+    filter: grayscale(0%); /* Remove o preto e branco no hover (volta à cor original) */
+    opacity: 1; /* Traz a opacidade total no hover */
+    transform: scale(1.05); /* Pequeno zoom no hover */
 }
 
 /* NOVO RODAPÉ - ESTILOS */
@@ -476,8 +344,13 @@ body {
     margin-bottom: 1rem;
 }
 
-
 /* Media Queries para Responsividade (ajustes para telas menores) */
+@media (max-width: 991.98px) { /* Ajusta para telas menores que large (lg) */
+    .product-category-card .card-img-top {
+        height: 180px; /* Ajusta altura da imagem em tablets */
+    }
+}
+
 @media (max-width: 768px) {
     .hero-title {
         font-size: 2.5rem; /* Ajusta o tamanho do título em telas menores */
@@ -513,5 +386,19 @@ body {
     .social-icons-footer {
         justify-content: center; /* Centraliza os ícones sociais */
         display: flex;
+    }
+    /* Ajustes de responsividade para a CTA final */
+    .cta-section {
+        padding: 3rem 0; /* Menos padding em telas menores */
+    }
+    .cta-section .btn {
+        padding: 0.6rem 1.8rem; /* Botão menor em telas pequenas */
+    }
+    /* Ajustes de responsividade para a seção de parceiros */
+    .partner-logo {
+        max-width: 120px;
+    }
+    .section-title-light {
+        font-size: 2rem;
     }
 }
