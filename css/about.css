@@ -1,0 +1,97 @@
+/* Estilos Específicos para a Página Sobre Nós - Cores Refatoradas */
+
+/* Hero Section da Página Sobre Nós */
+.page-hero-section {
+    background: linear-gradient(var(--overlay-dark), var(--overlay-dark)), url('../images/about-hero-bg.jpg') no-repeat center center;
+    background-size: cover;
+    min-height: 400px;
+    padding-top: 80px;
+    color: var(--text-on-dark); /* Garante que o texto padrão desta seção seja branco */
+}
+
+.page-hero-section .page-title {
+    color: var(--brand-orange); /* Título na cor laranja */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.page-hero-section p.lead {
+    color: var(--text-on-dark) !important; /* Texto do lead no banner: BRANCO */
+}
+
+/* Seção "Quem Somos" (o container principal) */
+/* Assumindo que o background desta seção é escuro (herdado do body ou de outra regra) */
+.container.my-5.py-5 {
+    background-color: var(--brand-dark); /* Fundo escuro para a seção "Quem Somos" */
+    color: var(--text-on-dark); /* Garante que o texto padrão da seção seja branco */
+}
+
+.container.my-5.py-5 h2.section-title {
+    color: var(--brand-orange); /* Mantém o título laranja */
+}
+
+/* Regra para os DOIS PARÁGRAFOS PRINCIPAIS da seção "Quem Somos" (texto sobre a história) */
+.container.my-5.py-5 > .row > .col-lg-8 p.lead,
+.container.my-5.py-5 > .row > .col-lg-8 p.text-dark-custom-footer {
+    color: var(--text-on-dark) !important; /* Estes parágrafos agora serão BRANCOS */
+}
+
+/* Ajustes para os cards de Missão, Visão, Valores */
+/* Os cards devem ter fundo branco e texto escuro para contraste com o fundo escuro da seção */
+.container.my-5.py-5 .card {
+    background-color: var(--card-light-bg); /* Fundo dos cards: BRANCO */
+    color: var(--text-on-light); /* Cor padrão para texto dentro do card: CINZA ESCURO */
+    border: 1px solid var(--border-light); /* Borda sutil para os cards */
+    box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.05); /* Sombra mais leve */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container.my-5.py-5 .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15) !important;
+}
+
+.container.my-5.py-5 .card .card-title {
+    color: var(--brand-orange); /* Títulos dos cards: laranja */
+}
+
+.container.my-5.py-5 .card i {
+    color: var(--brand-orange) !important; /* Ícones dos cards: laranja */
+}
+
+/* Garante que o texto dos parágrafos dentro dos cards seja a cor padrão do card (dark) */
+.container.my-5.py-5 .card .card-text {
+    color: var(--text-on-light) !important; /* Força o texto dos cards a ser CINZA ESCURO */
+}
+
+/* Garante que os itens da lista dentro do card de Valores sejam cinza escuro */
+.container.my-5.py-5 .card .list-unstyled li {
+    color: var(--text-on-light); /* Itens da lista nos cards: CINZA ESCURO */
+}
+
+
+/* CTA Section (na página Sobre Nós) */
+.cta-section {
+    background-color: var(--brand-orange); /* Fundo da CTA: laranja */
+    color: var(--text-on-dark); /* Texto da CTA: branco */
+    padding: 4rem 0;
+}
+
+.cta-section h2 {
+    color: var(--text-on-dark);
+    font-size: 2.5rem;
+}
+
+.cta-section p.lead {
+    font-size: 1.25rem;
+}
+
+.btn-primary-custom-outline-white {
+    color: var(--text-on-dark);
+    border-color: var(--text-on-dark);
+    transition: all 0.3s ease;
+}
+
+.btn-primary-custom-outline-white:hover {
+    background-color: var(--text-on-dark);
+    color: var(--brand-orange);
+}
